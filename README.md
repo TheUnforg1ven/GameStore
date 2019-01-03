@@ -4,6 +4,13 @@ Web site written on ASP .NET Core and using main core features
 ## Description
 
 ## Used
+During the development I used:
+
+* ASP .NET Core MVC
+* HTML/CSS
+* Bootstrap/Font Awesome
+* JavaScript/jQuery
+* SignalR
 
 ## Screenshots
 
