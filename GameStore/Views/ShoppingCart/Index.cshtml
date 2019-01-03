@@ -1,0 +1,56 @@
+﻿@model ShoppingCartViewModel
+
+<div class="marginTop1">
+    <h4>Your shopping cart</h4>
+
+    @if (Model.ShoppingCart.ShoppingCartItems.Count == 0)
+    {
+        <h5>Your cart is empty</h5>
+    }
+    else
+    {
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Selected amount</th>
+                    <th>Game</th>
+                    <th class="text-right">Price</th>
+                    <th class="text-right">Subtotal</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+                {
+                    <tr>
+                        <td class="text-center">@line.Amount</td>
+                        <td class="text-left">@line.Game.Name</td>
+                        <td class="text-right">@line.Game.Price.ToString("c")</td>
+                        <td class="text-right">
+                            @((line.Amount * line.Game.Price).ToString("c"))
+                        </td>
+                        <td class="text-center">
+                            <a class="fa fa-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-gameId="@line.Game.GameID"></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right">Total:</td>
+                    <td class="text-right">
+                        @Model.ShoppingCartTotal.ToString("c")
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <a class="btn btn-success mr-1 " asp-controller="Order" asp-action="Checkout">Check out</a>
+
+                <a class="btn btn-secondary" asp-controller="Game" asp-action="List"> Add more drinks</a>
+            </div>
+        </div>
+    }
+</div>

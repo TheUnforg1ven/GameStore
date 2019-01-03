@@ -1,0 +1,25 @@
+﻿@model CommentViewModel
+
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+
+<div class="col-md-8">
+    <form method="post" asp-controller="Game" asp-action="Comment" class="form-horizontal" role="form">
+        <input asp-for="GameID" type="hidden" />
+        <input asp-for="MainCommentID" type="hidden" />
+        <input asp-for="UserName" type="hidden" value="@User.Identity.Name" />
+        <div class="form-group text-left">
+            <label class="col-md-5">Add comment:</label>
+            <div class="col-md-10">
+                <textarea class="form-control" asp-for="Message"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-4">
+                <button class="btn btn-secondary btn-lg btn-block" type="submit">Send</button>
+            </div>
+        </div>
+    </form>
+</div>

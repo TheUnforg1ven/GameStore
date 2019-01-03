@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameStore", "GameStore\GameStore.csproj", "{B980351D-6E68-4702-ACF6-A00CDEE51B57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{75A79944-EAB1-45A0-B370-9C71D5233CC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{55DE6356-AD23-4459-A709-7E1A236E7AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Tests", "test\GameStore.Tests\GameStore.Tests.csproj", "{DC58C749-DAF4-4735-8D3F-563C6997A0F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B980351D-6E68-4702-ACF6-A00CDEE51B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B980351D-6E68-4702-ACF6-A00CDEE51B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B980351D-6E68-4702-ACF6-A00CDEE51B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B980351D-6E68-4702-ACF6-A00CDEE51B57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC58C749-DAF4-4735-8D3F-563C6997A0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC58C749-DAF4-4735-8D3F-563C6997A0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC58C749-DAF4-4735-8D3F-563C6997A0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC58C749-DAF4-4735-8D3F-563C6997A0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B980351D-6E68-4702-ACF6-A00CDEE51B57} = {75A79944-EAB1-45A0-B370-9C71D5233CC5}
+		{DC58C749-DAF4-4735-8D3F-563C6997A0F2} = {55DE6356-AD23-4459-A709-7E1A236E7AB4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50290AC4-DB63-4553-A6CA-9D7530FC71BB}
+	EndGlobalSection
+EndGlobal

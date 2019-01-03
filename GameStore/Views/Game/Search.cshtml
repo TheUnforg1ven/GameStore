@@ -1,0 +1,16 @@
+﻿@model GameListViewModel
+
+<div>
+    <h3>All games with: @Model.CurrentCategory</h3>
+    @if (Model.Games.Count() == 0)
+    {
+        <h4>Nothing found by your request</h4>
+    }
+</div>
+
+<div class="row">
+    @foreach (Game game in Model.Games)
+    {
+        @await Html.PartialAsync("GameSummary", game)
+    }
+</div>

@@ -1,0 +1,16 @@
+﻿<div class="dropdown">
+    <a  asp-controller="Game" asp-action="Index" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+    <div class="dropdown-menu">
+        @foreach (var category in Model)
+        {
+            <div>
+                <a class="dropdown-item" asp-controller="Game" asp-action="List"
+                   asp-route-category="@category.CategoryName">@category.CategoryName</a>
+            </div>
+        }
+        <div class="dropdown-divider"></div>
+        <div>
+            <a class="dropdown-item" asp-controller="Game" asp-action="List" asp-route-category="">View all games</a>
+        </div>
+    </div>
+</div>

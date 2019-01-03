@@ -1,0 +1,55 @@
+﻿@model Game
+
+<div class="img-thumbnail">
+    <table>
+        <tr>
+            <td><img src="@Model.ImageThumbnail" class="mx-auto d-block p-3" style="width: 320px; height: 450px;" /></td>
+            <td>
+                <div class="figure-caption p-2">
+                    <h4><a>@Model.Name</a></h4>
+                    <h4><a>@Model.Category.CategoryName</a></h4>
+                    <p>@Model.LongDescription</p>
+                    <p>@Model.ShortDescription</p>
+                </div>
+                <div class="addToCart text-right">
+                    <div class="figure-caption">
+                        <h3 class="float-left ml-2">@Model.Price.ToString("c")</h3>
+                    </div>
+                    <p class="button ">
+                        <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-gameId="@Model.GameID">
+                            Add to cart
+                        </a>
+                    </p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<br />
+
+@await Html.PartialAsync("SingleCarousel", @Model.Name)
+
+<br />
+<div>
+    @foreach (var comment in Model.MainComments)
+    {
+        <div class="img-thumbnail m-2">
+            <p class="m-3"><strong>@comment.UserName</strong></p>
+            <p class="m-3">@comment.Message</p>
+            <p class="m-3"> @comment.Created </p>
+        </div>
+
+        <div class="ml-5">
+            @foreach (var scom in comment.SubComments)
+            {
+                <div class="img-thumbnail m-2">
+                    <p class="m-3"><strong>@scom.UserName</strong></p>
+                    <p class="m-3">@scom.Message</p>
+                    <p class="m-3"> @scom.Created </p>
+                </div>
+            }
+            @await Html.PartialAsync("MainComment", new CommentViewModel { GameID = Model.GameID, MainCommentID = comment.CommentID })
+        </div>
+    }
+    @await Html.PartialAsync("MainComment", new CommentViewModel { GameID = Model.GameID, MainCommentID = 0 })
+</div>

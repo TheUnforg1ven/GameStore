@@ -1,0 +1,65 @@
+﻿#cartButton {
+    margin-right: 8px;
+}
+
+nav {
+    padding: 8px;
+}
+
+.btn-top {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 40px;
+}
+
+.containerCheckBox {
+    /*display: flex;*/
+    margin-right: 30%;
+    margin-left: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    margin: 10%;
+}
+
+.checkoutForm {
+    margin-top: 5%;
+}
+
+.orderForm {
+    margin-top: 3%;
+    border-color: #686868;
+}
+
+a.remove {
+    text-decoration: none;
+}
+
+a.remove:hover {
+    color: blue;
+}
+
+.center_div {
+    margin: 0 auto;
+    width: 80% 
+}
+
+.marginTop {
+    margin-top: 5%;
+}
+
+.marginTop1 {
+    margin-top: 2%;
+}
+
+.carousel img {
+    min-width: 100%;
+}

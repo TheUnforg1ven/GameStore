@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+    <link href="~/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/jquery/dist/jquery.js"></script>
+    <script src="~/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>Game Store</title>
+</head>
+<body style="background: #EEEEEE;">
+    @* Header navigation bar *@
+    <nav class="navbar navbar-expand navbar-dark bg-dark" role="navigation">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">GAME STORE</a>
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item "><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
+                    @await Component.InvokeAsync("CategoryMenu")
+                    <li class="nav-item "><a asp-controller="Chat" asp-action="Index" class="nav-link">Chat</a></li>
+                    <li class="nav-item "><a asp-controller="Contact" asp-action="Index" class="nav-link mr-5">Contact us</a></li>
+                    @await Component.InvokeAsync("SearchForm")
+                    @await Html.PartialAsync("LoginPartial")
+                    @await Component.InvokeAsync("ShoppingCartSummary")
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container card-body">
+        @RenderBody()
+
+        <hr />
+        @* Footer with all info *@
+        <footer class="text-left">
+            <a class="fab fa-twitter fa-2x" href="#" style="text-decoration: none;"></a>
+            <a class="fab fa-twitch fa-2x" href="#" style="text-decoration: none;"></a>
+            <a class="fab fa-youtube fa-2x" href="#" style="text-decoration: none;"></a>
+            <a class="fab fa-steam fa-2x" href="#" style="text-decoration: none;"></a>
+            <a class="fab fa-telegram fa-2x" href="#" style="text-decoration: none;"></a>
+            <a class="fab fa-instagram fa-2x" href="#" style="text-decoration: none;"></a>
+            <a class="fab fa-github fa-2x mr-5" href="https://github.com/TheUnforg1ven" style="text-decoration: none; "></a>
+            <a class="text-right ml-5">&copy;2018 - created by the_unforg1ven </a>
+        </footer>
+    </div>
+
+    @* Button, using which you can go top *@
+    <button class="btn btn-secondary btn-top" ><i class="fas fa-arrow-up"></i></button>
+
+    <script src="~/CustomJq/backToTop.js"></script>
+</body>
+</html>

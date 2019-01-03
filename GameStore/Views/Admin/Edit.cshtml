@@ -1,0 +1,43 @@
+﻿@model Game
+
+@{
+    ViewBag.Title = "Edit or Add Product";
+    Layout = "_AdminLayout";
+}
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="GameID" />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ShortDescription"></label>
+        <div><span asp-validation-for="ShortDescription" class="text-danger"></span></div>
+        <textarea asp-for="ShortDescription" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="LongDescription"></label>
+        <div><span asp-validation-for="LongDescription" class="text-danger"></span></div>
+        <textarea asp-for="LongDescription" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Category.CategoryName"></label>
+        <input asp-for="Category.CategoryName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <div><span asp-validation-for="Price" class="text-danger"></span></div>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageThumbnail"></label>
+        <div><span asp-validation-for="ImageThumbnail" class="text-danger"></span></div>
+        <input asp-for="ImageThumbnail" class="form-control" />
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" type="submit">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
