@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GameStore.Controllers
 {
@@ -44,13 +45,13 @@ namespace GameStore.Controllers
 		/// <param name="game">game to edit</param>
 		/// <returns>Needed view</returns>
 		[HttpPost]
-		public IActionResult Edit(Game game)
+		public async Task<IActionResult> Edit(Game game)
 		{
 			// if model is ok
 			if (ModelState.IsValid)
 			{
 				// save result
-				var savingResult = _gameRepository.SaveGame(game);
+				var savingResult = await _gameRepository.SaveGame(game);
 
 				// if all is ok - go to Index page
 				if (savingResult)

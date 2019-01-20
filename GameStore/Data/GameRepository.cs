@@ -3,6 +3,7 @@ using GameStore.Models.Comment;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GameStore.Data
 {
@@ -54,7 +55,7 @@ namespace GameStore.Data
 		/// </summary>
 		/// <param name="game">game to save</param>
 		/// <returns> true if success</returns>
-		public bool SaveGame(Game game)
+		public async Task<bool> SaveGame(Game game)
 		{
 			// if there are no such game
 			if (game.GameID == 0)
@@ -85,7 +86,7 @@ namespace GameStore.Data
 			}
 
 			// save all changes done with DB context
-			_applicationDbContext.SaveChanges();
+			await _applicationDbContext.SaveChangesAsync();
 
 			// if success
 			return true;

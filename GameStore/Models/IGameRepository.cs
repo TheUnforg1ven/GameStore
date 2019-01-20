@@ -1,5 +1,6 @@
 ﻿using GameStore.Models.Comment;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GameStore.Models
 {
@@ -30,7 +31,7 @@ namespace GameStore.Models
 		/// </summary>
 		/// <param name="game">'Game' for saving</param>
 		/// <returns>true if success, false if not</returns>
-		bool SaveGame(Game game);
+		Task<bool> SaveGame(Game game);
 
 		/// <summary>
 		/// Method to save new category
