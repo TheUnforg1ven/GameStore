@@ -86,10 +86,11 @@ namespace GameStore.Data
 			}
 
 			// save all changes done with DB context
-			await _applicationDbContext.SaveChangesAsync();
-
 			// if success
-			return true;
+			if (await _applicationDbContext.SaveChangesAsync() > 0)
+				return true;
+
+			return false;
 		}
 
 		/// <summary>
